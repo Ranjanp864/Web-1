@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranjan's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+            --tile-hover: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --background-color: #000000;
+            --text-color: #ffffff;
+            --tile-hover: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+        }
+
+        .tile {
+            background: #ffffff20;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tile:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px var(--tile-hover);
+        }
+
+        .footer-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #ff4500;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .ai-assistant {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1e90ff;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="dark-mode-toggle" onclick="toggleTheme()">Toggle Mode</button>
+    <button class="ai-assistant" onclick="activateAI()">🤖</button>
+
+    <header class="hero-section">
+        <nav class="navbar" style="position: sticky; top: 0; background-color: #333; z-index: 1000; padding: 10px;">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+                <h1 class="logo" style="font-family: 'Lobster', cursive; color: #ff4500;">🌟 Ranjan's Portfolio 🌟</h1>
+                <ul class="nav-links" style="display: flex; gap: 20px;">
+                    <li><a href="index.html" style="color: white; text-decoration: none;">🏠 Home</a></li>
+                    <li><a href="resume.html" style="color: white; text-decoration: none;">📜 Resume</a></li>
+                    <li><a href="bio.html" style="color: white; text-decoration: none;">👤 Bio</a></li>
+                    <li><a href="#contact" style="color: white; text-decoration: none;">📧 Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero-content" style="text-align: center; padding: 50px 20px; background: url('img/hero-bg.jpg') no-repeat center center/cover; color: white;">
+            <img src="rp.png" alt="Ranjan's Photo" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px;">
+            <h1>Welcome to My Portfolio</h1>
+            <p>A snapshot of my journey in Computer Science, showcasing skills, projects, and achievements.</p>
+            <a href="#contact" class="btn" style="background-color: #ff4500; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Get in Touch</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Resume Section -->
+        <section id="resume" class="section resume" style="background: linear-gradient(135deg, #1e90ff, #00fa9a); color: #fff; padding: 60px;">
+            <div class="container" style="max-width: 1000px; margin: auto;">
+                <h2 style="font-family: 'Lobster', cursive; text-shadow: 2px 2px 4px #000; text-align: center;">📜 Resume</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="tile">
+                        <h3>Education</h3>
+                        <ul>
+                            <li><strong>B.E. in Computer Science</strong> - Bangalore Institute of Technology (2022-2026), CGPA: 9.5</li>
+                            <li><strong>Class XII</strong> - Vidya Mandir Ind. PU College, 97.17%</li>
+                            <li><strong>Class X</strong> - Arvind International Residential School, 96.2%</li>
+                        </ul>
+                    </div>
+                    <div class="tile">
+                        <h3>Skills</h3>
+                        <p>💻 Python, Java, C, Git, AWS, Docker, Terraform, Jenkins</p>
+                        <p>📊 Data Structures, Algorithms, MySQL, MongoDB</p>
+                    </div>
+                    <div class="tile">
+                        <h3>Experience</h3>
+                        <p>🔧 Member, Google Developers Students Club (2022-present)</p>
+                    </div>
+                    <div class="tile">
+                        <h3>Projects</h3>
+                        <ul>
+                            <li><strong>GPS Toll-Based System</strong> - Automated toll management with real-time notifications <a href="https://github.com/Ranjanp864/Team-BIT-GEEKS_Intel-Unnati--PS-6-" target="_blank">View on GitHub</a></li>
+                            <li><strong>Result Analysis - RESNAL</strong> - Performance evaluation with visual analytics <a href="https://github.com/Ranjanp864/Result-analysis-Resnal" target="_blank">View on GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bio Section -->
+        <section id="bio" class="section bio" style="background-color: #f9f9f9; padding: 60px;">
+            <div class="container" style="max-width: 1000px; margin: auto;">
+                <h2 style="font-family: 'Lobster', cursive; color: #ff6347; text-align: center;">👤 Bio</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="tile">
+                        <h3>About Me</h3>
+                        <p>Hi, I'm Ranjan, a passionate Computer Science student who loves problem-solving and innovation.</p>
+                    </div>
+                    <div class="tile">
+                        <h3>Interests</h3>
+                        <p>💡 Open-source, Ethical Hacking, Hackathons, Chess, Quizzes</p>
+                    </div>
+                    <div class="tile">
+                        <h3>Achievements</h3>
+                        <ul>
+                            <li>🏅 Young Scientist Award, Karnataka</li>
+                            <li>🚀 Leader, Intel Unnati Program</li>
+                        </ul>
+                    </div>
+                    <div class="tile">
+                        <h3>Certifications</h3>
+                        <ul>
+                            <li>✅ Data Structures in Java, Great Learning</li>
+                            <li>🔒 Cybersecurity Basics, Coursera</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact" style="background: linear-gradient(135deg, #ff7f50, #ff4500); color: #fff; padding: 60px;">
+            <div class="container" style="max-width: 800px; margin: auto; text-align: center;">
+                <h2 style="font-family: 'Lobster', cursive;">📧 Contact Me</h2>
+                <form action="#" method="post" class="contact-form" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required style="padding: 10px; border-radius: 5px; border: none;">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required style="padding: 10px; border-radius: 5px; border: none;">
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required style="padding: 10px; border-radius: 5px; border: none;"></textarea>
+                    <button type="submit" class="btn" style="background: #fff; color: #ff4500; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #333; color: #fff; padding: 20px; text-align: center;">
+        <div>
+            <a href="https://github.com/Ranjanp864" target="_blank" class="footer-icons">
+                <img src="q.png" alt="GitHub">
+            </a>
+            <a href="https://linkedin.com/in/ranjan-p-83269b25b" target="_blank" class="footer-icons">
+                <img src="l.png" alt="LinkedIn">
+            </a>
+            <a href="mailto:ranjanp2004@gmail.com" class="footer-icons">
+                <img src="m.png" alt="Email">
+            </a>
+            <a href="tel:+919743063349" class="footer-icons">
+                <img src="c.jpg" alt="Call">
+            </a>
+        </div>
+        <p>&copy; 2024 Ranjan's Portfolio. Crafted with 💖</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const theme = document.documentElement.getAttribute('data-theme');
+            document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'light' : 'dark');
+        }
+
+        function activateAI() {
+            alert('AI Assistant activated! How can I assist you?');
+        }
+    </script>
+</body>
+</html>
